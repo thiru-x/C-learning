@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<unistd.h>
+    int main(){
+        int cf,df;
+        
+        printf("Enter the Current Floor :(1-10) ");
+        scanf("%d",&cf);
+        printf("Enter the Desired Floor :(1-10) ");
+        scanf("%d",&df);
+        
+        if(cf<1||cf>10||df<1||df>10){
+            printf("PLS ENTER THE VALID INPUT(1-10): ");
+            return 1;
+        }
+        
+        if(cf<df){
+            printf("Moving up....\n");
+            while(cf<df){
+                sleep(5);
+            cf++;
+            printf("\t↑\n");
+            // printf("\t|\n");
+            printf("\t|\n");
+            // printf("|\n");
+            // printf("|\n");
+            // printf("\tV\n");
+            printf("CURRENT FLOOR : %d\n",cf);}
+        }else if(cf>df){
+             printf("Moving down....\n");
+            while(cf>df){
+                sleep(5);
+            cf--;
+            printf("\t|\n");
+            // printf("\t|\n");
+            // printf("|\n");
+            // printf("|\n");
+            printf("\t↓\n");
+            printf("CURRENT FLOOR : %d\n",cf);}
+        }
+        else{
+            printf("You have Already in  desired Floor:...\n");
+        }
+        printf("You Have Reeched DESIRED FLOOR: %d\n",df);
+        return 0;
+    }
